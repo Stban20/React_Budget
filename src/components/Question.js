@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import PropTypes from "prop-types";
 import Error from "./Error";
 
 const Question = ({ setBudget, setRemaining, setShowQuestion }) => {
@@ -23,7 +24,7 @@ const Question = ({ setBudget, setRemaining, setShowQuestion }) => {
     setError(false);
     setBudget(amount);
     setRemaining(amount);
-    setShowQuestion(false)
+    setShowQuestion(false);
   };
 
   return (
@@ -45,6 +46,12 @@ const Question = ({ setBudget, setRemaining, setShowQuestion }) => {
       </form>
     </Fragment>
   );
+};
+
+Question.propTypes = {
+  setBudget: PropTypes.func,
+  setRemaining: PropTypes.func,
+  setShowQuestion: PropTypes.func,
 };
 
 export default Question;
